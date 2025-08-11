@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  sistema-vendas:
+    build: .
+    container_name: sistema-vendas
+    environment:
+      # Configurações do Banco de Dados
+      - DB_SERVER=${DB_SERVER:-localhost}
+      - DB_DATABASE=${DB_DATABASE:-exemplo_db}
+      - DB_USERNAME=${DB_USERNAME:-usuario}
+      - DB_PASSWORD=${DB_PASSWORD:-senha}
+      - DB_DRIVER={ODBC Driver 17 for SQL Server}
+      
+      # Configurações SFTP
+      - SFTP_HOSTNAME=${SFTP_HOSTNAME:-sftp.exemplo.com}
+      - SFTP_PORT=${SFTP_PORT:-22}
+      - SFTP_USERNAME=${SFTP_USERNAME:-usuario_sftp}
+      - SFTP_PASSWORD=${SFTP_PASSWORD:-senha_sftp}
+      - SFTP_REMOTE_DIR=${SFTP_REMOTE_DIR:-/uploads/}
+      
+      # Timezone
+      - TZ=America/Sao_Paulo
+    
+    volumes:
+      # Para logs (opcional)
+      - ./logs:/app/logs
+    
+    restart: unless-stopped
+    
+    # Uncomment to run automatically on container start
+    # command: python toFornecedor.py
+    
+    # Or uncomment for scheduled execution (requires cron setup in Dockerfile)
+    # command: cron -f
+
+# Para usar com arquivo .env, certifique-se de ter um arquivo .env na mesma pasta
+# Exemplo de .env:
+# DB_SERVER=meu_servidor.database.windows.net
+# DB_DATABASE=minha_base
+# DB_USERNAME=meu_usuario
+# DB_PASSWORD=minha_senha_secreta
+# SFTP_HOSTNAME=meu.servidor.sftp.com
+# SFTP_PORT=2022
+# SFTP_USERNAME=usuario_sftp
+# SFTP_PASSWORD=senha_sftp_secreta
+# SFTP_REMOTE_DIR=/dados/vendas/
