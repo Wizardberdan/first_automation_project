@@ -44,7 +44,7 @@ sistema-vendas/
 
 1. **Clone o repositório:**
    ```bash
-   git clone <url-do-repositorio>
+   git clone https://github.com/Wizardberdan/first_automation_project/tree/main
    cd sistema-vendas
    ```
 
@@ -175,25 +175,6 @@ Onde DDMMYYYY representa a data de ontem da execução.
 - Verificação automática do status do container
 
 ## 🔧 Manutenção e Troubleshooting
-
-### Comandos Úteis
-
-```batch
-# Verificar status do container
-docker ps --filter "name=sistema-vendas"
-
-# Ver logs do container
-docker logs sistema-vendas
-
-# Executar manualmente para teste
-run_vendas.bat
-
-# Verificar tarefa agendada
-schtasks /query /tn "Sistema-Vendas-Diario"
-
-# Executar tarefa agendada imediatamente
-schtasks /run /tn "Sistema-Vendas-Diario"
-```
 
 ### Problemas Comuns
 
