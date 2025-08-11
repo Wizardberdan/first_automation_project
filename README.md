@@ -214,24 +214,11 @@ schtasks /run /tn "Sistema-Vendas-Diario"
    - Verificar permissões da pasta `logs`
    - Executar como administrador
 
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
 ## 📞 Suporte
 
 Para dúvidas ou suporte, entre em contato através de:
-- Email: seu-email@exemplo.com
-- Issues do GitHub: [Link para issues]
+- Email: alberdan.gbmenezes@gmail.com
 
 ## 🔄 Versionamento
 
 - **v1.0**: Versão inicial com funcionalidades básicas de extração e envio
-
-## 📈 Roadmap
-
-- [ ] Implementar agendamento automático com cron
-- [ ] Adicionar suporte para múltiplos formatos de saída
-- [ ] Implementar retry automático em caso de falhas
-- [ ] Adicionar interface web para monitoramento
-- [ ] Integração com sistemas de alertas (Slack, email, etc.)
